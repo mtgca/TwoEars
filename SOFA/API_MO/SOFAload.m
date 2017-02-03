@@ -93,7 +93,7 @@ else
                 end          
             webfn = fn(length(SOFAdbPath)+1:end);
             webfn(strfind(webfn,'\'))='/';
-            webfn = [SOFAdbURL regexprep(webfn,' ','%20')];        
+            webfn = [SOFAdbURL '/amt-' amthelp('version') '/hrtf' regexprep(webfn,' ','%20')];        
             disp(['Downloading ' fn(length(SOFAdbPath)+1:end) ' from ' SOFAdbURL]);
             [f,stat] = urlwrite(webfn,fn);
             if ~stat
